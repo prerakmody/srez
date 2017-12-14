@@ -9,6 +9,7 @@ def setup_inputs(sess, filenames, image_size=None, capacity_factor=3):
     
     # Read each JPEG file
     reader = tf.WholeFileReader()
+    # print ('[srez_input]: filenames:', len(filenames), ' files')
     filename_queue = tf.train.string_input_producer(filenames)
     key, value = reader.read(filename_queue)
     channels = 3
@@ -41,7 +42,7 @@ def setup_inputs(sess, filenames, image_size=None, capacity_factor=3):
     feature = tf.reshape(downsampled, [image_size//K, image_size//K, 3])
     label   = tf.reshape(image,       [image_size,   image_size,     3])
 
-    # Using asynchronous queues
+    # Using asynchronous queues (Need to read more about this)
     features, labels = tf.train.batch([feature, label],
                                       batch_size=FLAGS.batch_size,
                                       num_threads=4,

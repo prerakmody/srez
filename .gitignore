@@ -1,5 +1,7 @@
-__pycache__/
-checkpoint*/
-dataset/
-train*/
+# System Created
+*__pycache__*
+.ipynb_checkpoints
 
+# User Created
+*checkpoint*
+*train*

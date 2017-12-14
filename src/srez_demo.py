@@ -1,8 +1,15 @@
-import moviepy.editor as mpe
+"""
+1. pip3 install moviepy
+2. import imageio; imageio.plugins.ffmpeg.download();
+
+"""
+
+import os.path
 import numpy as np
 import numpy.random
-import os.path
 import scipy.misc
+import moviepy.editor as mpe
+
 import tensorflow as tf
 
 FLAGS = tf.app.flags.FLAGS
